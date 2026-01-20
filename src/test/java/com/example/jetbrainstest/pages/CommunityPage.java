@@ -23,7 +23,7 @@ public class CommunityPage {
 
     public void setApplyButton() {
         applyButton.click();
-        System.out.println("Отправка заявки");
+        System.out.println("Отправить заявку");
     }
 
     public String getAnswerFromSystem() {
