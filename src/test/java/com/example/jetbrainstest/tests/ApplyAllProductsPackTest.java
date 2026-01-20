@@ -3,7 +3,6 @@ package com.example.jetbrainstest.tests;
 import com.example.jetbrainstest.pages.CommunityPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,7 +31,6 @@ public class ApplyAllProductsPackTest {
     }
 
     @Test
-    @DisplayName("Отправка заявки на получение поддержки специалистов")
     public void applyForDevelopRecognition() {
         cp.setDevRecButton();
         assertTrue(cp.checkIfDevRecButtonIsEnabled(), "Кнопка Developer Recognition недоступна");

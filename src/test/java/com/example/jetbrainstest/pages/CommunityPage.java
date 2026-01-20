@@ -17,7 +17,7 @@ public class CommunityPage {
 
     public void setDevRecButton() {
         devRecButton.click();
-        System.out.println("Переход на страницу IT-сообщества");
+        System.out.println("Переход на страницу 'сообщества'");
     }
 
 
