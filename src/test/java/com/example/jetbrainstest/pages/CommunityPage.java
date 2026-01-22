@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CommunityPage {
-    @FindBy(css = "div>ul>li:nth-child(9)>ul>li:nth-child(3)")
+    @FindBy(xpath = "//a[contains(text(), 'Developer Recognition')]")
     private WebElement devRecButton;
 
     @FindBy(css = "a[data-test=button")
@@ -19,7 +19,6 @@ public class CommunityPage {
         devRecButton.click();
         System.out.println("Переход на страницу 'сообщества'");
     }
-
 
     public void setApplyButton() {
         applyButton.click();

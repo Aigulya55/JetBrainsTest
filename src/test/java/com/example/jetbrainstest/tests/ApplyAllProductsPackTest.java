@@ -24,7 +24,7 @@ public class ApplyAllProductsPackTest {
         this.driver.get("https://www.jetbrains.com.cn/en-us/");
         cp = new CommunityPage(driver);
     }
-
+    
     @AfterEach
     public void tearDown() {
         this.driver.quit();
