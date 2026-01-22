@@ -17,14 +17,14 @@ public class ApplyAllProductsPackTest {
     private CommunityPage cp;
 
     @BeforeEach
-    public void setUP() {
+    public void setUp() {
         this.driver = new ChromeDriver();
         this.driver.manage().window().maximize();
         this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         this.driver.get("https://www.jetbrains.com.cn/en-us/");
         cp = new CommunityPage(driver);
     }
-    
+
     @AfterEach
     public void tearDown() {
         this.driver.quit();
