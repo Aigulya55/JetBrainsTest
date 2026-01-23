@@ -33,7 +33,7 @@ public class ApplyAllProductsPackTest {
     @Test
     public void applyForDevelopRecognition() {
         cp.setDevRecButton();
-        assertTrue(cp.checkIfDevRecButtonIsEnabled(), "Кнопка Developer Recognition недоступна");
+        assertTrue(cp.checkIfDevRecButtonIsEnabled(), "Кнопка 'Developer Recognition' недоступна");
 
         cp.setApplyButton();
         assertTrue(cp.checkIfAppllyButtonIsEnabled(), "Функция Apply недоступна");

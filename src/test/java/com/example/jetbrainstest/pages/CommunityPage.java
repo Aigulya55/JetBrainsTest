@@ -9,7 +9,8 @@ public class CommunityPage {
     @FindBy(xpath = "//a[contains(text(), 'Developer Recognition')]")
     private WebElement devRecButton;
 
-    @FindBy(css = "a[data-test=button") private WebElement applyButton;
+    @FindBy(css = "a[data-test=button")
+    private WebElement applyButton;
     @FindBy(css = "div[class='topLevelMessage']")
     private WebElement answerFromSystem;
 
