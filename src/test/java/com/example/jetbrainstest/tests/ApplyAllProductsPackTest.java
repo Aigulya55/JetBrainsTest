@@ -4,8 +4,10 @@ import com.example.jetbrainstest.pages.CommunityPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
@@ -18,9 +20,11 @@ public class ApplyAllProductsPackTest {
 
     @BeforeEach
     public void setUp() {
-        this.driver = new ChromeDriver();
-        this.driver.manage().window().maximize();
-        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        ChromeOptions options = new ChromeOptions();
+        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         this.driver.get("https://www.jetbrains.com.cn/en-us/");
         cp = new CommunityPage(driver);
     }
@@ -36,7 +40,7 @@ public class ApplyAllProductsPackTest {
         assertTrue(cp.checkIfDevRecButtonIsEnabled(), "Кнопка 'Developer Recognition' недоступна");
 
         cp.setApplyButton();
-        assertTrue(cp.checkIfAppllyButtonIsEnabled(), "Функция Apply недоступна");
+        assertTrue(cp.checkIfAppllyButtonIsDisplayed(), "Функция Apply недоступна");
 
         cp.getAnswerFromSystem();
         String AnswerFromSystem = "Unfortunately, we're unable to deliver licenses to your country/region owing to existing legal restrictions.";
