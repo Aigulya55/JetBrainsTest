@@ -15,7 +15,7 @@ public class CommunityPage {
     @FindBy(xpath = "//a[contains(text(), 'Developer Recognition')]")
     private WebElement devRecButton;
 
-    @FindBy(css = "[data-test='button']")
+    @FindBy(css = "a[data-test='button']")
     private WebElement applyButton;
 
     @FindBy(css = "div[class='topLevelMessage']")
@@ -27,7 +27,7 @@ public class CommunityPage {
     }
 
     public void setApplyButton() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.elementToBeClickable(applyButton));
         applyButton.click();
         System.out.println("Отправить заявку");
@@ -44,13 +44,13 @@ public class CommunityPage {
         return devRecButton.isEnabled();
     }
 
-    public boolean checkIfAppllyButtonIsDisplayed() {
+    public boolean checkIfAppllyButtonIsEnabled() {
         System.out.println("Проверка кнопки Apply");
-        return applyButton.isDisplayed();
+        return applyButton.isEnabled();
     }
 
     public CommunityPage(WebDriver driver) {
-        this.driver = driver;
+      this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 }

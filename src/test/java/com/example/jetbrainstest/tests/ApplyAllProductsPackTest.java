@@ -38,9 +38,8 @@ public class ApplyAllProductsPackTest {
     public void applyForDevelopRecognition() {
         cp.setDevRecButton();
         assertTrue(cp.checkIfDevRecButtonIsEnabled(), "Кнопка 'Developer Recognition' недоступна");
-
+        assertTrue(cp.checkIfAppllyButtonIsEnabled(), "Функция Apply недоступна");
         cp.setApplyButton();
-        assertTrue(cp.checkIfAppllyButtonIsDisplayed(), "Функция Apply недоступна");
 
         cp.getAnswerFromSystem();
         String AnswerFromSystem = "Unfortunately, we're unable to deliver licenses to your country/region owing to existing legal restrictions.";
