@@ -27,7 +27,7 @@ public class CommunityPage {
     }
 
     public void setApplyButton() {
-       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.elementToBeClickable(applyButton));
         applyButton.click();
         System.out.println("Отправить заявку");
@@ -50,7 +50,7 @@ public class CommunityPage {
     }
 
     public CommunityPage(WebDriver driver) {
-      this.driver = driver;
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 }
